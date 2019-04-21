@@ -1,41 +1,41 @@
 package hu.nyirszikszi;
 
-public class Nobel {
-    private int evszam;
-    private String tipus;
-    private String keresztnev;
-    private String vezeteknev;
+class Nobel {
+    private int year;
+    private String type;
+    private String firstName;
+    private String lastName;
 
-    public Nobel(int evszam, String tipus, String keresztnev, String vezeteknev) {
-        this.evszam = evszam;
-        this.tipus = tipus;
-        this.keresztnev = keresztnev;
-        this.vezeteknev = vezeteknev;
+    Nobel(int year, String type, String firstName, String lastName) {
+        this.year = year;
+        this.type = type;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public int getEvszam() {
-        return evszam;
+    int getYear() {
+        return year;
     }
 
-    public String getTipus() {
-        return tipus;
+    String getType() {
+        return type;
     }
 
-    public String getKeresztnev() {
-        return keresztnev;
+    String getFirstName() {
+        return firstName;
     }
 
-    public String getVezeteknev() {
-        return vezeteknev;
+    String getLastName() {
+        return lastName;
     }
 
     @Override
     public String toString() {
         return "Nobel{" +
-                "evszam=" + evszam +
-                ", tipus='" + tipus + '\'' +
-                ", keresztnev='" + keresztnev + '\'' +
-                ", vezeteknev='" + vezeteknev + '\'' +
+                "year=" + year +
+                ", type='" + type + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 '}';
     }
 }

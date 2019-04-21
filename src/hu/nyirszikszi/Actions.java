@@ -39,8 +39,8 @@ class Actions {
 
     static String prizeOfABMcD(ArrayList<Nobel> list, String keresztnev, String vezeteknev) {
         for (Nobel nobel : list) {
-            if (nobel.getKeresztnev().equals(keresztnev) && nobel.getVezeteknev().equals(vezeteknev)) {
-                return nobel.getTipus();
+            if (nobel.getFirstName().equals(keresztnev) && nobel.getLastName().equals(vezeteknev)) {
+                return nobel.getType();
             }
         }
 
@@ -49,8 +49,8 @@ class Actions {
 
     static String winnerOfLiteratureAward2017(ArrayList<Nobel> list, int year, String type) {
         for (Nobel nobel : list) {
-            if (nobel.getEvszam() == (year) && nobel.getTipus().equals(type)) {
-                return nobel.getKeresztnev() + " " + nobel.getVezeteknev();
+            if (nobel.getYear() == (year) && nobel.getType().equals(type)) {
+                return nobel.getFirstName() + " " + nobel.getLastName();
             }
         }
 
@@ -61,8 +61,8 @@ class Actions {
         ArrayList<String> winners = new ArrayList<>();
 
         for (Nobel nobel : list) {
-            if (nobel.getEvszam() >= from && nobel.getTipus().equals(type) && nobel.getVezeteknev() == null) {
-                winners.add(nobel.getEvszam() + ": " + nobel.getKeresztnev());
+            if (nobel.getYear() >= from && nobel.getType().equals(type) && nobel.getLastName() == null) {
+                winners.add(nobel.getYear() + ": " + nobel.getFirstName());
             }
         }
 
@@ -74,8 +74,8 @@ class Actions {
 
         for (Nobel nobel : list) {
             try {
-                if (nobel.getVezeteknev().contains("Curie")) {
-                    winners.add(nobel.getEvszam() + ": " + nobel.getKeresztnev() + " " + nobel.getVezeteknev() + " (" + nobel.getTipus() + ")");
+                if (nobel.getLastName().contains("Curie")) {
+                    winners.add(nobel.getYear() + ": " + nobel.getFirstName() + " " + nobel.getLastName() + " (" + nobel.getType() + ")");
                 }
             }
             catch (Exception e) {
@@ -95,7 +95,7 @@ class Actions {
             counter = 0;
 
             for (Nobel nobel : list) {
-                if (nobel.getTipus().equals(type)) {
+                if (nobel.getType().equals(type)) {
                     counter++;
                 }
             }
@@ -110,8 +110,8 @@ class Actions {
         ArrayList<String> results = new ArrayList<>();
 
         for (Nobel nobel : list) {
-            if (nobel.getTipus().equals(type)) {
-                results.add(nobel.getEvszam() + ": " + nobel.getKeresztnev() + " " + nobel.getVezeteknev() + " (" + nobel.getTipus() + ")");
+            if (nobel.getType().equals(type)) {
+                results.add(nobel.getYear() + ": " + nobel.getFirstName() + " " + nobel.getLastName() + " (" + nobel.getType() + ")");
             }
         }
 
