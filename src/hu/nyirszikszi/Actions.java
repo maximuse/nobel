@@ -37,9 +37,9 @@ class Actions {
         return list;
     }
 
-    static String prizeOfABMcD(ArrayList<Nobel> list, String keresztnev, String vezeteknev) {
+    static String prizeOfABMcD(ArrayList<Nobel> list, String firstName, String lastName) {
         for (Nobel nobel : list) {
-            if (nobel.getFirstName().equals(keresztnev) && nobel.getLastName().equals(vezeteknev)) {
+            if (nobel.getFirstName().equals(firstName) && nobel.getLastName().equals(lastName)) {
                 return nobel.getType();
             }
         }
